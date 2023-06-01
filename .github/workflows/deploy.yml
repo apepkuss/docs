@@ -13,6 +13,7 @@ on:
       - '.gitignore'
     branches:
       - main
+      - "fix-issue"
 
 jobs:
   publish:
@@ -41,15 +42,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Push directory to another repository
-        if: ${{ github.event_name == 'push' }}
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.BOOK }}
-        with:
-          source-directory: 'build'
-          destination-github-username: 'WasmEdge'
-          destination-repository-name: 'www'
-          target-directory: 'docs'
-          user-email: juyichen0413@foxmail.com
-          target-branch: main
+      # - name: Push directory to another repository
+      #   if: ${{ github.event_name == 'push' }}
+      #   uses: cpina/github-action-push-to-another-repository@main
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.BOOK }}
+      #   with:
+      #     source-directory: 'build'
+      #     destination-github-username: 'WasmEdge'
+      #     destination-repository-name: 'www'
+      #     target-directory: 'docs'
+      #     user-email: juyichen0413@foxmail.com
+      #     target-branch: main
