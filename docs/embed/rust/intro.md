@@ -8,7 +8,7 @@ sidebar_position: 1
 
 WasmEdge Rust SDK consists of four crates. In the diagram below, the blue rectangles represent the crates, and the arrows show the dependency relation.
 
-<div align=center>
+<div align="center">
   <img src="image/arch-rust-sdk.jpg" width=50%/>
 </div>
 
